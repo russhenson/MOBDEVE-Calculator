@@ -30,6 +30,7 @@
         android:layout_height="98dp"
         android:background="#00FFFFFF"
         android:ems="10"
+        android:enabled="false"
         android:gravity="right|center_vertical"
         android:inputType="textPersonName"
         android:text="123"
