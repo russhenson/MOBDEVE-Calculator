@@ -7,14 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class OperationsActivity extends AppCompatActivity {
 
-    private TextView titleTextView;
-    private EditText computeEditText;
-    private Button opsBtn;
+    private Button equalBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +19,15 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE); // hide title in title bar
         getSupportActionBar().hide(); // hide title bar
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_operations);
 
-        this.opsBtn = findViewById(R.id.opsBtn);
-        this.opsBtn.setOnClickListener(new View.OnClickListener() {
+        /*this.equalBtn = findViewById(R.id.equalBtn);
+        this.equalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, OperationsActivity.class);
-                startActivity(i);
+                Intent i = new Intent(OperationsActivity.this, MainActivity.class);
+
             }
-        });
-
-
-
+        });*/
     }
 }
