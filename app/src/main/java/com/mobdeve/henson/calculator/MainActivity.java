@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText computeEditText;
     private Button opsBtn, btn1, btn2, btn3, btn4;
     private Button btn5, btn6, btn7, btn8, btn9, btn0;
+    private int num1, num2;
+    private String ops;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.btn1:
+                computeEditText.setText(computeEditText.getText().append(btn1.getText().toString()));
+                break;
+                
 
         }
 
