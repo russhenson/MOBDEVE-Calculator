@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class OperationsActivity extends AppCompatActivity {
 
-    private Button equalBtn;
+//    private Button equalBtn, minusBtn, divideBtn, plusBtn, multBtn;
+    private EditText computeOpsEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +24,21 @@ public class OperationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_operations);
 
         /*this.equalBtn = findViewById(R.id.equalBtn);
-        this.equalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(OperationsActivity.this, MainActivity.class);
 
-            }
-        });*/
+        this.minusBtn = findViewById(R.id.minusBtn);
+
+        this.divideBtn = findViewById(R.id.divideBtn);
+
+        this.plusBtn = findViewById(R.id.plusBtn);
+
+        this.multBtn = findViewById(R.id.multBtn);*/
+
+        this.computeOpsEt = findViewById(R.id.computeOpsEt);
+
+        Intent i = getIntent();
+        int num1 = i.getIntExtra(MainActivity.NUM_1, 0);
+
+        computeOpsEt.setText(num1);
+
     }
 }
