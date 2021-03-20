@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
 
+        // buttons
         this.opsBtn = findViewById(R.id.opsBtn);
         opsBtn.setOnClickListener(this);
         this.btn1 = findViewById(R.id.btn1);
@@ -52,6 +53,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn9.setOnClickListener(this);
         this.btn0 = findViewById(R.id.btn0);
         btn0.setOnClickListener(this);
+
+        // computeET
+        this.computeEditText = findViewById(R.id.computeEditText);
+
+
 
         /*this.opsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
