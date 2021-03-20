@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static String NUM_1 = "NUM_1";
     public static String NUM_2 = "NUM_2";
+    public static String DISPLAY = "DISPLAY";
 
 
 
@@ -66,8 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 int num1 = Integer.parseInt(computeEditText.getText().toString());
+                String display = computeEditText.getText().toString();
                 Intent i = new Intent(MainActivity.this, OperationsActivity.class);
                 i.putExtra(NUM_1, num1);
+                i.putExtra(DISPLAY, display);
                 startActivity(i);
             }
         });

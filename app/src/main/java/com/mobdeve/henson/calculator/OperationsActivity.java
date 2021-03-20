@@ -37,8 +37,9 @@ public class OperationsActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         int num1 = i.getIntExtra(MainActivity.NUM_1, 0);
+        String display = i.getStringExtra(MainActivity.DISPLAY);
 
-        computeOpsEt.setText(num1);
+        computeOpsEt.setText(display);
 
     }
 }
