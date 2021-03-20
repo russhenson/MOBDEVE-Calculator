@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i.putExtra(NUM_1, num1);
                 i.putExtra(DISPLAY, display);
                 startActivity(i);
+
+
             }
         });
 

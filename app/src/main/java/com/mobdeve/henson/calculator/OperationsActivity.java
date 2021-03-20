@@ -9,10 +9,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class OperationsActivity extends AppCompatActivity {
+public class OperationsActivity extends AppCompatActivity implements View.OnClickListener{
 
-//    private Button equalBtn, minusBtn, divideBtn, plusBtn, multBtn;
+    private Button equalBtn, minusBtn, divideBtn, plusBtn, multBtn;
     private EditText computeOpsEt;
+    private String display;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,23 +25,35 @@ public class OperationsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_operations);
 
-        /*this.equalBtn = findViewById(R.id.equalBtn);
-
+        this.equalBtn = findViewById(R.id.equalBtn);
+        equalBtn.setOnClickListener(this);
         this.minusBtn = findViewById(R.id.minusBtn);
-
+        minusBtn.setOnClickListener(this);
         this.divideBtn = findViewById(R.id.divideBtn);
-
+        divideBtn.setOnClickListener(this);
         this.plusBtn = findViewById(R.id.plusBtn);
-
-        this.multBtn = findViewById(R.id.multBtn);*/
+        plusBtn.setOnClickListener(this);
+        this.multBtn = findViewById(R.id.multBtn);
+        multBtn.setOnClickListener(this);
 
         this.computeOpsEt = findViewById(R.id.computeOpsEt);
 
         Intent i = getIntent();
         int num1 = i.getIntExtra(MainActivity.NUM_1, 0);
-        String display = i.getStringExtra(MainActivity.DISPLAY);
+        display = i.getStringExtra(MainActivity.DISPLAY);
 
         computeOpsEt.setText(display);
-
     }
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.minusBtn:
+                computeOpsEt.setText(computeOpsEt.getText().append("-"));
+                
+                finish();
+                break;
+        }
+    }
+
 }
