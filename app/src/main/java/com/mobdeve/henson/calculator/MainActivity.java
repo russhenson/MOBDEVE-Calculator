@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -20,7 +21,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static String NUM_1 = "NUM_1";
     public static String NUM_2 = "NUM_2";
+    public static String OPERATOR = "OPERATOR";
     public static String DISPLAY = "DISPLAY";
+
+    public static int REQUEST_CODE = 1;
+    public static String LOG_TAG = "MainActivity";
 
 
 
@@ -71,8 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i = new Intent(MainActivity.this, OperationsActivity.class);
                 i.putExtra(NUM_1, num1);
                 i.putExtra(DISPLAY, display);
-                startActivity(i);
-
+                startActivityForResult(i, REQUEST_CODE);
 
             }
         });
@@ -120,9 +124,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 computeEditText.setText(computeEditText.getText().append("0"));
                 break;
         }
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-
+        if (requestCode == REQUEST_CODE){
+            String display = data.getStringExtra(OperationsActivity.RESULT_TAG);
+            Log.d(LOG_TAG, "OnActivityResult: received data -> " + display);
+            computeEditText.setText(display);
+        }
     }
 
 }

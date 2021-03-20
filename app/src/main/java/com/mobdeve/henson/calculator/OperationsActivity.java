@@ -2,6 +2,7 @@ package com.mobdeve.henson.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,9 @@ public class OperationsActivity extends AppCompatActivity implements View.OnClic
     private Button equalBtn, minusBtn, divideBtn, plusBtn, multBtn;
     private EditText computeOpsEt;
     private String display;
+
+    public static String RESULT_TAG = "RESULTS";
+    public static String LOG_TAG = "OperationsActivity";
 
 
     @Override
@@ -49,8 +53,12 @@ public class OperationsActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v){
         switch (v.getId()){
             case R.id.minusBtn:
-                computeOpsEt.setText(computeOpsEt.getText().append("-"));
-                
+                //computeOpsEt.setText(computeOpsEt.getText().append("-"));
+                display = computeOpsEt.getText().append("-").toString();
+                Intent return_intent = new Intent();
+
+                return_intent.putExtra(RESULT_TAG, display);
+                setResult(Activity.RESULT_OK, return_intent);
                 finish();
                 break;
         }
