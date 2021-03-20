@@ -77,11 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.btn1:
-                this.computeEditText.setText("1");
-                System.out.println("1");
+                this.computeEditText.setText(computeEditText.getText().append("1"));
                 break;
             case R.id.btn2:
-                 computeEditText.setText("2");
+                 computeEditText.setText(computeEditText.getText().append("2"));
                  break;
             case R.id.btn3:
                 computeEditText.setText("3");
