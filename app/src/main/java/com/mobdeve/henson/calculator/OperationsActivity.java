@@ -16,6 +16,7 @@ public class OperationsActivity extends AppCompatActivity implements View.OnClic
     private EditText computeOpsEt;
     private String display;
 
+
     public static String RESULT_TAG = "RESULTS";
     public static String LOG_TAG = "OperationsActivity";
 
@@ -58,7 +59,10 @@ public class OperationsActivity extends AppCompatActivity implements View.OnClic
                 Intent return_intent = new Intent();
 
                 return_intent.putExtra(RESULT_TAG, display);
+
+
                 setResult(Activity.RESULT_OK, return_intent);
+
                 finish();
                 break;
         }

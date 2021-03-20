@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button opsBtn;
     private Button btn1, btn2, btn3, btn4;
     private Button btn5, btn6, btn7, btn8, btn9, btn0;
+    private int num1, num2;
 
     public static String NUM_1 = "NUM_1";
     public static String NUM_2 = "NUM_2";
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         opsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num1 = Integer.parseInt(computeEditText.getText().toString());
+                num1 = Integer.parseInt(computeEditText.getText().toString());
                 String display = computeEditText.getText().toString();
                 Intent i = new Intent(MainActivity.this, OperationsActivity.class);
                 i.putExtra(NUM_1, num1);
@@ -80,9 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
-
-
 
     }
 
@@ -134,6 +132,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String display = data.getStringExtra(OperationsActivity.RESULT_TAG);
             Log.d(LOG_TAG, "OnActivityResult: received data -> " + display);
             computeEditText.setText(display);
+
+            // ops button
+            this.opsBtn = findViewById(R.id.opsBtn);
+            opsBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String[] numArr = computeEditText.getText().toString().split("\\+|\\-|\\*|\\/");
+                    num2 = Integer.parseInt(numArr[1]);
+                    String display = computeEditText.getText().toString();
+                    Intent i = new Intent(MainActivity.this, OperationsActivity.class);
+                    i.putExtra(NUM_2, num2);
+                    i.putExtra(DISPLAY, display);
+                    startActivityForResult(i, REQUEST_CODE);
+
+                }
+            });
+            System.out.println(num1);
+            System.out.println(num2);
         }
     }
 
