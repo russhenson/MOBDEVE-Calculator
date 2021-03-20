@@ -59,12 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });*/
 
-        this.btn1.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                computeEditText.setText(computeEditText.getText().append(btn1.getText().toString()));
-            }
-        }));
     }
 
     @Override
@@ -74,15 +68,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i = new Intent(MainActivity.this, OperationsActivity.class);
                 startActivity(i);
                 break;
-            /*case R.id.btn1:
-                computeEditText.setText(computeEditText.getText().append(btn1.getText().toString()));
+            case R.id.btn1:
+                computeEditText.setText("1");
+                System.out.println("1");
                 break;
             case R.id.btn2:
                  computeEditText.setText("2");
                  break;
             case R.id.btn3:
                 computeEditText.setText("3");
-                break;*/
+                break;
                 
 
         }
