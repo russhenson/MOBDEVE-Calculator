@@ -70,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn1:
                 computeEditText.setText(computeEditText.getText().append(btn1.getText().toString()));
                 break;
+            case R.id.btn2:
+                 computeEditText.setText("2");
+                 break;
+            case R.id.btn3:
+                computeEditText.setText("3");
+                break;
                 
 
         }
