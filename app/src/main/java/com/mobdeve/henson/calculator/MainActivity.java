@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView titleTextView;
     private EditText computeEditText;
-    private Button opsBtn, btn1, btn2, btn3, btn4;
+    private Button opsBtn;
+    private Button btn1;
+    private Button btn2, btn3, btn4;
     private Button btn5, btn6, btn7, btn8, btn9, btn0;
     private int num1, num2;
     private String ops;
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.btn1:
-                computeEditText.setText("1");
+                this.computeEditText.setText("1");
                 System.out.println("1");
                 break;
             case R.id.btn2:
